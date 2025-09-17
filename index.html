@@ -1,62 +1,46 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Courses Information</title>
+  <title>Food Delivery Demo</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-    }
-    .course {
-      background: #ffffff;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-    .course h2 {
-      margin-top: 0;
-      color: #007acc;
-    }
-    .course p {
-      color: #333;
-    }
+    body { font-family: Arial, sans-serif; text-align: center; padding: 20px;background-color:lightblue; }
+    .menu { margin: 20px auto; width: 300px; }
+    .item { border: 1px solid #ccc; margin: 10px; padding: 10px; border-radius: 5px; }
+    button { background: #ff4d4f; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+    #cart { margin-top: 20px; font-weight: bold; }
   </style>
 </head>
 <body>
-  <h1>Available Courses</h1>
+  <img src="fooddelivery.drawio.png">
 
-  <div class="course">
-    <h2>Computer Science</h2>
-    <p>This course covers programming languages, algorithms, databases, networking, and the basics of software development.</p>
+  <h2>🍔 Mini Food Delivery App</h2>
+
+  <div class="menu">
+    <div class="item">
+      <p>coffee - ₹100</p>
+      <button onclick="addToCart('Burger', 100)">Add to Cart</button>
+    </div>
+    <div class="item">
+      <p>Pizza - ₹200</p>
+      <button onclick="addToCart('Pizza', 200)">Add to Cart</button>
+    </div>
+    <div class="item">
+      <p>Sandwich - ₹80</p>
+      <button onclick="addToCart('Sandwich', 80)">Add to Cart</button>
+    </div>
   </div>
 
-  <div class="course">
-    <h2>Business Administration</h2>
-    <p>Learn about management principles, accounting, marketing, and leadership skills to succeed in the corporate world.</p>
-  </div>
+  <div id="cart">Cart is empty</div>
 
-  <div class="course">
-    <h2>Data Science</h2>
-    <p>This course teaches data analysis, machine learning, statistics, and visualization techniques for solving real-world problems.</p>
-  </div>
+  <script>
+    let total = 0;
+    function addToCart(item, price) {
+      total += price;
+      document.getElementById("cart").innerText = "Total: ₹" + total;
+    }
+  </script>
 
-  <div class="course">
-    <h2>Graphic Design</h2>
-    <p>Understand design principles, color theory, typography, and tools like Photoshop and Illustrator for creative design work.</p>
-  </div>
-
-  <div class="course">
-    <h2>Cyber Security</h2>
-    <p>Focuses on protecting systems, networks, and data from cyber threats through ethical hacking and security protocols.</p>
-  </div>
 </body>
 </html>
-
+challenge1/index.html at
